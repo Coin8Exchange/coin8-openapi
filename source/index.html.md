@@ -5,4 +5,4 @@ search: false
 
 ---
 
-<script language='javascript'>document.location = '/coinstore-openapi.github.io/cn/'</script>
+<script language='javascript'>document.location = '/coin8-openapi/cn/'</script>
