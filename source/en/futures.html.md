@@ -407,7 +407,7 @@ Get currency & contract information
 Get user assets balance
 
 ### HTTP Request: 
-- POST  /api/future/queryAvail
+- GET  /api/future/queryAvail
 
 
 > Response 

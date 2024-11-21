@@ -381,7 +381,7 @@ HTTP常见的错误码如下：
 获取用户资产余额
 
 ### HTTP请求: 
-- POST  /api/future/queryAvail
+- GET  /api/future/queryAvail
 
 
 > 响应 
