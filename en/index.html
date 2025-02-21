@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Official API Document Of Coinstore</title>
+    <title>Official API Document Of Coin8</title>
     <link href="../images/favicon-ec3a52a0.ico" rel="icon" type="image/ico">
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -520,7 +520,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to Coinstore Developer Documentation. It is the only official documentation of Coinstore API.</p>
+<p>Welcome to Coin8 Developer Documentation. It is the only official documentation of Coin8 API.</p>
 
 <p>This documentation provides an introduction to the use of related APIs.</p>
 
@@ -528,7 +528,7 @@
 
 <p>Websocket provides ticker-related interface and push service.</p>
 
-<p>The services provided by Coinstore API will be continuously updated here, so stay tuned for updates.</p>
+<p>The services provided by Coin8 API will be continuously updated here, so stay tuned for updates.</p>
 <h1 id='quick-start'>Quick Start</h1><h2 id='create-apikey'>Create APIkey</h2>
 <p>To use API, please log into the webpage first, create an API key through [User Center] - [API Managment], and then develop and trade according to the details of this documentation.</p>
 
@@ -541,7 +541,7 @@
 <li><code>Secret Key</code> Key for encryption of signature authentication</li>
 </ul>
 <h2 id='interface-type'>Interface Type</h2>
-<p>Coinstore provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.</p>
+<p>Coin8 provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.</p>
 
 <p><strong>REST API</strong></p>
 
@@ -569,11 +569,11 @@
 <h2 id='access-urls'>Access URLs</h2>
 <p><strong>REST API</strong></p>
 
-<p><code>https://api.coinstore.com/api</code></p>
+<p><code>https://api.coin8.com/api</code></p>
 
 <p><strong>WebSocket</strong></p>
 
-<p><code>wss://ws.coinstore.com/s/ws</code></p>
+<p><code>wss://ws.coin8.com/s/ws</code></p>
 
 <p>To ensure the stability of API service, it is recommended to access using Japanese AWS cloud server. If the client server in Chinese mainland is used, it would be difficult to guarantee the stability of the connection.</p>
 <h2 id='rate-limit'>Rate Limit</h2>
@@ -645,7 +645,7 @@ Note: The request parameters and request body are not sorted but directly splice
 </code></pre></div>
 <p><strong>Python Example</strong></p>
 
-<p>https://coinstore-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coinstore.py</p>
+<p>https://coin8-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coin8.py</p>
 
 <p><code>It is recommended to use Python SDK version 3.9,using a version lower than 3.9 may lead to compatibility issues or inaccuracies in signature calculation.</code></p>
 <h1 id='api-access-instructions'>API Access Instructions</h1><h2 id='request-format'><span id="a3"> Request Format </span></h2>
@@ -654,7 +654,7 @@ Note: The request parameters and request body are not sorted but directly splice
 - POST request: Parameters can be set in the path, and they can be sent in JSON format to the request body. If there are no parameters,{} needs to be sent</p>
 
 <p>A licit request consists of the following parts:
-- method request address: Access server address api.coinstore.com，e.g. https://api.coinstore.com/api/trade/order/place
+- method request address: Access server address api.coin8.com，e.g. https://api.coin8.com/api/trade/order/place
 - Required and optional parameters.
 - X-CS-APIKEY: API Key applied by the user.
 - X-CS-EXPIRES: Timestamp when you issued the request. For example:1629291143107.
@@ -865,7 +865,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/public/config/spot/symbols"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/v2/public/config/spot/symbols"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -883,7 +883,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1075,7 +1075,7 @@ needs to be set.</strong></p>
 
 <span class="c1"># api get currency information
 </span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v1/common/currency?currencyCode=ETH"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v1/common/currency?currencyCode=ETH"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1142,7 +1142,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/spot/accountList"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/spot/accountList"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1160,7 +1160,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1358,7 +1358,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/deposit/do"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v3/asset/deposit/do"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1576,7 +1576,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/deposit/record/list"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v3/asset/deposit/record/list"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1819,7 +1819,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/withdraw/record/list"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v3/asset/withdraw/record/list"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1985,7 +1985,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/doWithdraw"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v3/asset/doWithdraw"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2093,7 +2093,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/cancelWithdraw"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/fi/v3/asset/cancelWithdraw"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2130,7 +2130,7 @@ needs to be set.</strong></p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='fund-transfer'><span id="2">Fund transfer</span></h2>
 <p>Fund transfer</p>
-<h4 id='currently-supporting-contract-lt-gt-spot-transfer-api-domain-name-address-https-futures-api-coinstore-com-api-call-support-for-apikey'>Currently supporting contract&lt;-&gt;spot transfer, API domain name address https://futures.api.coinstore.com/api Call support for ApiKey</h4><h3 id='http-request-8'>HTTP Request:</h3>
+<h4 id='currently-supporting-contract-lt-gt-spot-transfer-api-domain-name-address-https-futures-api-coin8-com-api-call-support-for-apikey'>Currently supporting contract&lt;-&gt;spot transfer, API domain name address https://futures.api.coin8.com/api Call support for ApiKey</h4><h3 id='http-request-8'>HTTP Request:</h3>
 <ul>
 <li>POST /v1/future/transfer</li>
 </ul>
@@ -2231,7 +2231,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v1/future/transfer"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/v1/future/transfer"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2321,7 +2321,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span> 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/active"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/active"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span> 
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2505,7 +2505,7 @@ needs to be set.</strong></p>
 </tbody></table>
 <h2 id='get-current-orders-v2'><span id="2"> Get current orders V2 </span></h2>
 <p>Get current order v2 version</p>
-<h4 id='the-new-interface-api-domain-name-address-https-api-coinstore-com-call-support-for-apikey'>The new interface API domain name address <code>https://api.coinstore.com</code>  Call support for ApiKey</h4><h3 id='http-request-10'>HTTP Request:</h3>
+<h4 id='the-new-interface-api-domain-name-address-https-api-coin8-com-call-support-for-apikey'>The new interface API domain name address <code>https://api.coin8.com</code>  Call support for ApiKey</h4><h3 id='http-request-10'>HTTP Request:</h3>
 <ul>
 <li>GET /api/v2/trade/order/active</li>
 </ul>
@@ -2518,7 +2518,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/trade/order/active"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/v2/trade/order/active"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span> 
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2727,7 +2727,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/match/accountMatches?symbol=tipusdt"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/match/accountMatches?symbol=tipusdt"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2978,7 +2978,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancel"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/cancel"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3087,7 +3087,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancelAll"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/cancelAll"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3107,7 +3107,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3159,7 +3159,7 @@ needs to be set.</strong></p>
 </tbody></table>
 <h2 id='create-order'><span id="6"> Create order </span></h2>
 <p>Create order</p>
-<h4 id='regular-user-accounts-are-only-allowed-to-hold-up-to-50-active-orders-at-the-same-time-while-market-making-accounts-are-not-subject-to-this-restriction-if-you-are-a-market-maker-but-do-not-have-permission-to-add-a-market-making-account-please-contact-the-coinstore-delivery-department'>Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coinstore delivery department.</h4>
+<h4 id='regular-user-accounts-are-only-allowed-to-hold-up-to-50-active-orders-at-the-same-time-while-market-making-accounts-are-not-subject-to-this-restriction-if-you-are-a-market-maker-but-do-not-have-permission-to-add-a-market-making-account-please-contact-the-coin8-delivery-department'>Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coin8 delivery department.</h4>
 <blockquote>
 <p>Request Body</p>
 </blockquote>
@@ -3181,7 +3181,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/place"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/place"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3206,7 +3206,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3325,7 +3325,7 @@ needs to be set.</strong></p>
 </tbody></table>
 <h2 id='batch-ordering'><span id="13"> Batch ordering </span></h2>
 <p>Batch ordering</p>
-<h4 id='regular-user-accounts-are-only-allowed-to-hold-up-to-50-active-orders-at-the-same-time-while-market-making-accounts-are-not-subject-to-this-restriction-if-you-are-a-market-maker-but-do-not-have-permission-to-add-a-market-making-account-please-contact-the-coinstore-delivery-department-2'>Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coinstore delivery department.</h4>
+<h4 id='regular-user-accounts-are-only-allowed-to-hold-up-to-50-active-orders-at-the-same-time-while-market-making-accounts-are-not-subject-to-this-restriction-if-you-are-a-market-maker-but-do-not-have-permission-to-add-a-market-making-account-please-contact-the-coin8-delivery-department-2'>Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coin8 delivery department.</h4>
 <blockquote>
 <p>Request Body</p>
 </blockquote>
@@ -3357,7 +3357,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/placeBatch"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/placeBatch"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3380,7 +3380,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3552,7 +3552,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancelAll"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/cancelAll"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3570,7 +3570,7 @@ needs to be set.</strong></p>
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.com',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3662,7 +3662,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/orderInfo?ordId=1780715084580128"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/trade/order/orderInfo?ordId=1780715084580128"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3867,7 +3867,7 @@ needs to be set.</strong></p>
 </tbody></table>
 <h2 id='get-order-information-v2'><span id="14">Get order information V2 </span></h2>
 <p>Get order information v2</p>
-<h4 id='the-new-interface-api-domain-name-address-https-api-coinstore-com-call-support-for-apikey-2'>The new interface API domain name address <code>https://api.coinstore.com</code>  Call support for ApiKey</h4><h3 id='http-request-18'>HTTP Request:</h3>
+<h4 id='the-new-interface-api-domain-name-address-https-api-coin8-com-call-support-for-apikey-2'>The new interface API domain name address <code>https://api.coin8.com</code>  Call support for ApiKey</h4><h3 id='http-request-18'>HTTP Request:</h3>
 <ul>
 <li>GET /api/v2/trade/order/orderInfo</li>
 </ul>
@@ -3880,7 +3880,7 @@ needs to be set.</strong></p>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'da2b7ed9aeee00744193d251bc99a09c'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'28fd41afcb4bdcb752634b1549ad9aa7'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -4710,7 +4710,7 @@ needs to be set.</strong></p>
 </tr>
 </tbody></table>
 <h1 id='websocket-ticker-data'>Websocket Ticker Data</h1><h2 id='introduction-2'><strong>Introduction</strong></h2><h3 id='access-url'>Access URL</h3>
-<p>wss://ws.coinstore.com/s/ws</p>
+<p>wss://ws.coin8.com/s/ws</p>
 
 <ol>
 <li><p>The baseurl of all wss interfaces is: wss://<a href="host:port">host:port</a>/s/ws</p></li>
