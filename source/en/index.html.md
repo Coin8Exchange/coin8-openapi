@@ -1,5 +1,5 @@
 ---
-title: Official API Document Of Coinstore
+title: Official API Document Of Coin8
 
 language_tabs: # must be one of https://git.io/vQNgJ
   
@@ -43,7 +43,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to Coinstore Developer Documentation. It is the only official documentation of Coinstore API.
+Welcome to Coin8 Developer Documentation. It is the only official documentation of Coin8 API.
 
 This documentation provides an introduction to the use of related APIs.
 
@@ -51,7 +51,7 @@ RESTful API includes interfaces such as assets, orders and tickers.
 
 Websocket provides ticker-related interface and push service.
 
-The services provided by Coinstore API will be continuously updated here, so stay tuned for updates.
+The services provided by Coin8 API will be continuously updated here, so stay tuned for updates.
 
 
 
@@ -60,7 +60,7 @@ The services provided by Coinstore API will be continuously updated here, so sta
 ## Create APIkey
 
 To use API, please log into the webpage first, create an API key through [User Center] - [API Managment], and then develop and trade according to the details of this documentation.
-[You can click here to create an API Key]: https://www.coinstore.com/#/user/bindAuth/ManagementAPI
+[You can click here to create an API Key]: https://www.coin8.com/#/user/bindAuth/ManagementAPI
 
 Each user can create 5 groups of API Keys, and each group of API Keys can bind 5 different IP addresses. Once an API key binds an address, the API interface can only be called by using the API key from the bound IP address. For security reasons, it is strongly recommended that you bind the corresponding IP address for API key.
 
@@ -70,7 +70,7 @@ Please remember the following information upon successful creation:
 - `Secret Key` Key for encryption of signature authentication
 
 ## Interface Type
-Coinstore provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.
+Coin8 provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.
 
 **REST API**
 
@@ -100,11 +100,11 @@ Private interface can be used for trading management. Every private request must
 
 **REST API**
 
-`https://api.coinstore.com/api`
+`https://api.coin8.com/api`
 
 **WebSocket**
 
-`wss://ws.coinstore.com/s/ws`
+`wss://ws.coin8.com/s/ws`
 
 To ensure the stability of API service, it is recommended to access using Japanese AWS cloud server. If the client server in Chinese mainland is used, it would be difficult to guarantee the stability of the connection.
 
@@ -198,7 +198,7 @@ Example 3: Mixed Request
 
 **Python Example**
 
- https://coinstore-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coinstore.py
+ https://coin8-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coin8.py
 
  `It is recommended to use Python SDK version 3.9,using a version lower than 3.9 may lead to compatibility issues or inaccuracies in signature calculation.`
 
@@ -211,7 +211,7 @@ All API requests are restful, and there are only two methods at present: GET and
 - POST request: Parameters can be set in the path, and they can be sent in JSON format to the request body. If there are no parameters,{} needs to be sent
 
 A licit request consists of the following parts:
-- method request address: Access server address api.coinstore.com，e.g. https://api.coinstore.com/api/trade/order/place
+- method request address: Access server address api.coin8.com，e.g. https://api.coin8.com/api/trade/order/place
 - Required and optional parameters.
 - X-CS-APIKEY: API Key applied by the user.
 - X-CS-EXPIRES: Timestamp when you issued the request. For example:1629291143107.
@@ -321,7 +321,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/public/config/spot/symbols"
+url = "https://api.coin8.com/api/v2/public/config/spot/symbols"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -339,7 +339,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -432,7 +432,7 @@ import requests
 
 # api get currency information
 
-url = "https://api.coinstore.com/api/fi/v1/common/currency?currencyCode=ETH"
+url = "https://api.coin8.com/api/fi/v1/common/currency?currencyCode=ETH"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -505,7 +505,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/spot/accountList"
+url = "https://api.coin8.com/api/spot/accountList"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -523,7 +523,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -625,7 +625,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/deposit/do"
+url = "https://api.coin8.com/api/fi/v3/asset/deposit/do"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -733,7 +733,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/deposit/record/list"
+url = "https://api.coin8.com/api/fi/v3/asset/deposit/record/list"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -860,7 +860,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/withdraw/record/list"
+url = "https://api.coin8.com/api/fi/v3/asset/withdraw/record/list"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -973,7 +973,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/doWithdraw"
+url = "https://api.coin8.com/api/fi/v3/asset/doWithdraw"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1052,7 +1052,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/cancelWithdraw"
+url = "https://api.coin8.com/api/fi/v3/asset/cancelWithdraw"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1092,7 +1092,7 @@ print(response.text)
 ## <span id="2">Fund transfer</span>
 Fund transfer
 
-#### Currently supporting contract<->spot transfer, API domain name address https://futures.api.coinstore.com/api Call support for ApiKey
+#### Currently supporting contract<->spot transfer, API domain name address https://futures.api.coin8.com/api Call support for ApiKey
 
 
 ### HTTP Request:
@@ -1142,7 +1142,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/v1/future/transfer"
+url = "https://api.coin8.com/api/v1/future/transfer"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1223,7 +1223,7 @@ import json
 import math
 import time
 import requests 
-url = "https://api.coinstore.com/api/trade/order/active"
+url = "https://api.coin8.com/api/trade/order/active"
 api_key=b'your api_key'
 secret_key = b'your secret_key' 
 expires = int(time.time() * 1000)
@@ -1304,7 +1304,7 @@ print(response.text)
 
 Get current order v2 version
 
-#### The new interface API domain name address `https://api.coinstore.com`  Call support for ApiKey
+#### The new interface API domain name address `https://api.coin8.com`  Call support for ApiKey
 
 
 ### HTTP Request:
@@ -1320,7 +1320,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/trade/order/active"
+url = "https://api.coin8.com/api/v2/trade/order/active"
 api_key=b'your api_key'
 secret_key = b'your secret_key' 
 expires = int(time.time() * 1000)
@@ -1416,7 +1416,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/match/accountMatches?symbol=tipusdt"
+url = "https://api.coin8.com/api/trade/match/accountMatches?symbol=tipusdt"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time()* 1000)
@@ -1531,7 +1531,7 @@ import math
 import time
 import requests
 import json
-url = "https://api.coinstore.com/api/trade/order/cancel"
+url = "https://api.coin8.com/api/trade/order/cancel"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1601,7 +1601,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/cancelAll"
+url = "https://api.coin8.com/api/trade/order/cancelAll"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1621,7 +1621,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1653,7 +1653,7 @@ print(response.text)
 ## <span id="6"> Create order </span>
 Create order
 
-#### Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coinstore delivery department.
+#### Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coin8 delivery department.
 
 > Request Body
 
@@ -1678,7 +1678,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/place"
+url = "https://api.coin8.com/api/trade/order/place"
 api_key=b'your api_key'
 secret_key = b'your secret key'
 expires = int(time.time() * 1000)
@@ -1703,7 +1703,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1754,7 +1754,7 @@ print(response.text)
 Batch ordering
 
 
-#### Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coinstore delivery department.
+#### Regular user accounts are only allowed to hold up to 50 active orders at the same time, while market-making accounts are not subject to this restriction.If you are a market maker but do not have permission to add a market-making account, please contact the Coin8 delivery department.
 
 
 > Request Body
@@ -1790,7 +1790,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/placeBatch"
+url = "https://api.coin8.com/api/trade/order/placeBatch"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1813,7 +1813,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1896,7 +1896,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/cancelAll"
+url = "https://api.coin8.com/api/trade/order/cancelAll"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1914,7 +1914,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1970,7 +1970,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/orderInfo?ordId=1780715084580128"
+url = "https://api.coin8.com/api/trade/order/orderInfo?ordId=1780715084580128"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time()* 1000)
@@ -2060,7 +2060,7 @@ print(response.text)
 ## <span id="14">Get order information V2 </span>
 Get order information v2
 
-#### The new interface API domain name address `https://api.coinstore.com`  Call support for ApiKey
+#### The new interface API domain name address `https://api.coin8.com`  Call support for ApiKey
 
 
 ### HTTP Request:
@@ -2076,7 +2076,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"
+url = "https://api.coin8.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"
 api_key=b'da2b7ed9aeee00744193d251bc99a09c'
 secret_key = b'28fd41afcb4bdcb752634b1549ad9aa7'
 expires = int(time.time()* 1000)
@@ -2471,7 +2471,7 @@ Get the latest price of all symbols
 ##  **Introduction**
 
 ### Access URL
-wss://ws.coinstore.com/s/ws
+wss://ws.coin8.com/s/ws
 
 1. The baseurl of all wss interfaces is: wss://<host:port>/s/ws
 

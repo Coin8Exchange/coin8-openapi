@@ -1,5 +1,5 @@
 ---
-title: Coinstore official API document
+title: Coin8 official API document
 
 language_tabs: # must be one of https://git.io/vQNgJ
   
@@ -43,7 +43,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to Coinstore Developer Documentation. It is the only official documentation of Coinstore API.
+Welcome to Coin8 Developer Documentation. It is the only official documentation of Coin8 API.
 
 This documentation provides an introduction to the use of related APIs.
 
@@ -51,7 +51,7 @@ RESTful API includes interfaces such as assets, orders and tickers.
 
 Websocket provides ticker-related interface and push service.
 
-The services provided by Coinstore API will be continuously updated here, so stay tuned for updates.
+The services provided by Coin8 API will be continuously updated here, so stay tuned for updates.
 
 
 
@@ -61,7 +61,7 @@ The services provided by Coinstore API will be continuously updated here, so sta
 
 To use API, please log into the webpage first, create an API key through [User Center] - [API Managment], and then develop and trade according to the details of this documentation.
 
-You can click 'https://www.coinstore.com/#/user/bindAuth/ManagementAPI' to create an API Key.
+You can click 'https://www.coin8.co/#/user/bindAuth/ManagementAPI' to create an API Key.
 
 Each user can create 5 groups of API Keys, and each group of API Keys can bind 5 different IP addresses. Once an API key binds an address, the API interface can only be called by using the API key from the bound IP address. For security reasons, it is strongly recommended that you bind the corresponding IP address for API key.
 
@@ -71,7 +71,7 @@ Please remember the following information upon successful creation:
 - `Secret Key` Key for encryption of signature authentication
 
 ## Interface Type
-Coinstore provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.
+Coin8 provides users with two interfaces, and you can choose the appropriate way to query the ticker and trade according to your own usage scenarios and preferences.
 
 **REST API**
 
@@ -101,11 +101,11 @@ Private interface can be used for trading management. Every private request must
 
 **REST API**
 
-`https://futures.coinstore.com/api`
+`https://futures.coin8.com/api`
 
 **WebSocket**
 
-`wss://ws-futures.coinstore.com/socket.io/?EIO=3&transport=websocket`
+`wss://ws-futures.coin8.com/socket.io/?EIO=3&transport=websocket`
 
 To ensure the stability of API service, it is recommended to access using Japanese AWS cloud server. If the client server in Chinese mainland is used, it would be difficult to guarantee the stability of the connection.
 
@@ -194,7 +194,7 @@ All API requests are restful, and there are only two methods at present: GET and
 - POST request: Parameters can be set in the path, and they can be sent in JSON format to the request body. If there are no parameters,{} needs to be sent
 
 A licit request consists of the following parts:
-- method request address: Access server address futures.coinstore.com，e.g. https://futures.coinstore.com/api/future/place
+- method request address: Access server address futures.coin8.com，e.g. https://futures.coin8.com/api/future/place
 - Required and optional parameters.
 - X-CS-APIKEY: API Key applied by the user.
 - X-CS-EXPIRES: Timestamp when you issued the request. For example:1629291143107.
@@ -747,7 +747,7 @@ Get active order
 
 Get active order V2 version
 
-#### The new interface API domain name address `https://futures.coinstore.com`  Call support for ApiKey
+#### The new interface API domain name address `https://futures.coin8.com`  Call support for ApiKey
 
 ### HTTP Request:
 
@@ -834,7 +834,7 @@ Get active order V2 version
 
 get order info V2 version
 
-#### The new interface API domain name address `https://futures.coinstore.com`  Call support for ApiKey
+#### The new interface API domain name address `https://futures.coin8.com`  Call support for ApiKey
 
 ### HTTP Request:
 
@@ -1235,7 +1235,7 @@ Get all trade records
 ## <span id="3">Get user's all trade records V2</span>
 Get all trade records V2 version
 
-#### The new interface API domain name address `https://futures.coinstore.com`  Call support for ApiKey
+#### The new interface API domain name address `https://futures.coin8.com`  Call support for ApiKey
 
 ### HTTP Request:
 - GET /api/v2/trade/order/queryHisMatch
@@ -1649,7 +1649,7 @@ Get all trade records
 ### Access URL
 
 `
-wss://ws-futures.coinstore.com/socket.io/?EIO=3&transport=websocket
+wss://ws-futures.coin8.com/socket.io/?EIO=3&transport=websocket
 `
 
 ### Authentication
